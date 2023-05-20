@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 export default function ToDoList({todos , onTodoChange , onTodoDelete}) {
   return (
     <ul className="todo-list">
@@ -17,7 +18,7 @@ function Todo({todo , onChange , onDelete}){
     <>
     <input type="checkbox" name={`${todo.id}-done`} id={`${todo.id}-done`} checked={todo.done} onChange={(e)=>{onChange({...todo, done: e.target.checked})}} />
     {todo.text}
-    <button onClick={()=> onDelete(todo.id)}>X</button>
+    <button className="deleteButton" onClick={()=> onDelete(todo.id)}>X</button>
     </>
     )
 }
